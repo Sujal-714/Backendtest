@@ -20,11 +20,7 @@ const PORT = process.env.PORT ;
 
 //Middleware
 app.set('trust proxy', 1);  // trust first proxy
-app.use(cors({
-  origin: 'https://frontend-test-https://frontend-test-h9et05lr2-sujal-poudels-projects.vercel.app/-sujal-poudels-projects.vercel.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true,
-}));
+app.use(cors());
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
