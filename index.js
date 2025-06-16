@@ -7,11 +7,10 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const pool = new pg.Pool({
-    user: "postgres",
-host: "localhost",
-database: "books",
-password: "admin",
-port:5432
+ connectionString: process.env.DATABASE_URL,
+   ssl: {
+    rejectUnauthorized: false,
+  },
 });
 
 
