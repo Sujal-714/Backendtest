@@ -3,6 +3,8 @@ import pg from "pg";
 import bodyParser from "body-parser";
 import postRoutes from "./routes/post.js";
 import cors from "cors";
+import dotenv from 'dotenv';
+dotenv.config();
 
 const pool = new pg.Pool({
     user: "postgres",
@@ -14,7 +16,7 @@ port:5432
 
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT ||3000;
 
 
 //Middleware
